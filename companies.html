@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Request to sell a Product</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+<link rel="icon" type="image/png" href="images/icons/favicon.png"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/themify/themify-icons.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/elegant-font/html-css/style.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/slick/slick.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+
+</head>
+<body class="animsition" >
+
+
+
+		<!-- top noti -->
+		<div class="flex-c-m size22 bg0 s-text21 pos-relative">
+				<!-- Point to Point Communication -->
+        </div>
+        
+
+	<!-- Header -->
+	<header class="header1">
+	
+			<div class="wrap_header">
+				<!-- Logo -->
+				<a href="index.html" class="logo">
+					<img src="images/icons/logo.png" alt="IMG-LOGO">
+				</a>
+
+				<!-- Menu -->
+				<div class="wrap_menu">
+                        <nav class="menu">
+                            <ul class="main_menu">
+                                <li>
+                                    <a href="index.html">Home</a>
+                                </li>
+                                
+                                <!--DOESNT WORK FOR SHOW-->
+                                <li>
+                                    <a href="#">Shop</a>
+                                </li>
+                                <li>
+                                    <a href="#">About</a>
+                                </li>
+    
+                                <li>
+                                    <a href="#">Contact</a>
+                                </li>
+                                <li>
+                                        <a href="companies.html">Corporate</a>
+                                    </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <!--Menu End-->
+
+        <div class="header-icons">
+                <a href="#" class="header-wrapicon1 dis-block">
+                    <img src="images/icons/icon-header-01.png" class="header-icon1" alt="ICON">
+                </a>
+
+                <div class="header-wrapicon2">
+                    <img src="images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
+                    <span class="header-icons-noti">0</span>
+                </div>
+        </div>
+            <!--Header Icon End-->
+
+        </div>
+    <br>
+    <br>
+
+
+        	<!-- Category we choose that will populate upon clicking  -->
+	<section class="bgwhite p-t-45 p-b-58">
+            <div class="container">
+                <div class="sec-title p-b-22">
+                    <h3 class="m-text5 t-center productCat">
+                        Proposed Product
+                    </h3>
+                </div>
+        </section>
+
+        <h4 class="text-center">Fill up your proposed product's details and we will get back to you within 3-5 working days</h1>
+            
+			<!-- Default form contact -->
+			<div class="container" >
+            <form class="text-center border border-light p-5" id="request">                
+                    <!-- Name -->
+                    <input type="text" id="product_name" class="form-control mb-4" placeholder="Product Name" value="">
+                    <!-- Company name -->
+                    <input type="text" id="company_name" class="form-control mb-4" placeholder="Company Name" value="">
+                    <!-- Category -->
+                    <input type="text" id="category" class="form-control mb-4" placeholder="Category" value="">                    
+                    <!-- Max Quantity -->
+                    <input type="text" id="max_quantity" class="form-control mb-4" placeholder="Maximum Quantity" value="">
+                    <!-- Email -->
+                    <input type="text" id="min_quantity" class="form-control mb-4" placeholder="Minimum Quantity" value="">
+                    <!-- Criteria -->
+                    <input type="text" id="groupbuy_criteria" class="form-control mb-4" placeholder="Group Purchase Quantity" value="">
+                    <!-- Description -->
+                    <input type="text" id="promo_description" class="form-control mb-4" placeholder="Promotion description" value="">
+                    <!-- Image url -->
+                    <input type="text" id="image_url" class="form-control mb-4" placeholder="Image Url" value="">
+                    <!-- Email -->
+                    <input type="text" id="email" class="form-control mb-4" placeholder="Email" value="">
+                    <!--Offer-->
+                    <input type="text" id="newp" class="form-control mb-4" placeholder="New Price" value="">
+                    <!--Renew-->
+                    <input type="text" id="oldp" class="form-control mb-4" placeholder="Old Price" value="">
+
+
+                
+                    <!-- Copy -->
+                    <div class="custom-control custom-checkbox mb-4">
+                        <input type="checkbox" class="custom-control-input" id="defaultContactFormCopy">
+                        <!-- <label class="custom-control-label" for="defaultContactFormCopy">Send me a copy of this message</label> -->
+                    </div>
+                
+                    <!-- Send button -->
+                    <button class="flex-c-m size2 bg4 bo-rad-23 hov1 m-text3 trans-0-4" id="submit">
+                        Submit</button>
+                        
+                </form>
+                        
+            </div>
+            
+            <script>
+                    document.querySelector("#submit").addEventListener("click", (e) => {
+                        let product_name = document.getElementById("product_name").value;
+                        let company_name = document.getElementById("company_name").value;
+                        let category = document.getElementById("category").value;
+                        let max_quantity = document.getElementById("max_quantity").value;
+                        let min_quantity = document.getElementById("min_quantity").value;
+                        let groupbuy_criteria = document.getElementById("groupbuy_criteria").value;
+                        let promo_description = document.getElementById("promo_description").value;
+                        let image_url = document.getElementById("image_url").value;
+                        let email = document.getElementById("email").value;
+                        let newp = document.getElementById("newp").value;
+                        let oldp = document.getElementById("oldp").value;
+                
+
+
+''
+                        data = {"product_name" : product_name, "company_name" : company_name, "category" : category, 
+                        "max_quantity" : max_quantity, "min_quantity" : min_quantity, "groupbuy_criteria" : groupbuy_criteria,
+                        "promo_description": promo_description, "image_url" : image_url, "new_price" : newp, "old_price": oldp}
+                        
+                        console.log(data);
+
+                        $.ajax({
+                            type: "POST",
+                            url : "http://DESKTOP-VGA4GN0:8050/postoffer",
+                            data : JSON.stringify(data),
+                            success: console.log("success!"),
+                            error: console.log("failure!") ,
+                            headers: {                              
+                                'Content-Type': 'application/json'  
+                            }                 
+                        });
+
+                        
+
+                    })
+            
+            </script>
+        </section>
+        
+                <div class="t-center p-l-15 p-r-15">        
+                    <div class="t-center s-text8 p-t-20">
+                        Copyright © 2019 All rights reserved. | G4T5
+                    </div>
+                </div>
+            </footer>
+        
+            <!-- Back to top -->
+            <div class="btn-back-to-top bg0-hov" id="myBtn">
+                <span class="symbol-btn-back-to-top">
+                    <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+                </span>
+            </div>
+        
+        
+            
+        
+        
+        <!--===============================================================================================-->
+            <script type="text/javascript" src="vendor/jquery/jquery-3.2.1.min.js"></script>
+        <!--===============================================================================================-->
+            <script type="text/javascript" src="vendor/animsition/js/animsition.min.js"></script>
+        <!--===============================================================================================-->
+            <script type="text/javascript" src="vendor/bootstrap/js/popper.js"></script>
+            <script type="text/javascript" src="vendor/bootstrap/js/bootstrap.min.js"></script>
+        <!--===============================================================================================-->
+            <script type="text/javascript" src="vendor/select2/select2.min.js"></script>
+            <script type="text/javascript">
+                $(".selection-1").select2({
+                    minimumResultsForSearch: 20,
+                    dropdownParent: $('#dropDownSelect1')
+                });
+            </script>
+        <!--===============================================================================================-->
+            <script type="text/javascript" src="vendor/slick/slick.min.js"></script>
+            <script type="text/javascript" src="js/slick-custom.js"></script>
+        <!--===============================================================================================-->
+            <script type="text/javascript" src="vendor/countdowntime/countdowntime.js"></script>
+        <!--===============================================================================================-->
+            <script type="text/javascript" src="vendor/sweetalert/sweetalert.min.js"></script>
+
+
+    
+    <!--===============================================================================================-->
+	    <script type="text/javascript" src="vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+        <script type="text/javascript" src="vendor/animsition/js/animsition.min.js"></script>
+    <!--===============================================================================================-->
+        <script type="text/javascript" src="vendor/bootstrap/js/popper.js"></script>
+        <script type="text/javascript" src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+        <script type="text/javascript" src="vendor/select2/select2.min.js"></script>
+
+        <script type="text/javascript">
+            $(".selection-1").select2({
+                minimumResultsForSearch: 20,
+                dropdownParent: $('#dropDownSelect1')
+            });
+        </script>
+    <!--===============================================================================================-->
+        <script type="text/javascript" src="vendor/slick/slick.min.js"></script>
+        <script type="text/javascript" src="js/slick-custom.js"></script>
+    <!--===============================================================================================-->
+        <script type="text/javascript" src="vendor/countdowntime/countdowntime.js"></script>
+    <!--===============================================================================================-->
+        <script type="text/javascript" src="vendor/sweetalert/sweetalert.min.js"></script>
+    
+
+<!--===============================================================================================-->
+        <script src="js/main.js"></script>
+
+
+
+</body>
+</html>

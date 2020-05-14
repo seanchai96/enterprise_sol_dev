@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Invoice</title>
+
+    <!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="images/icons/favicon.png"/>
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="fonts/themify/themify-icons.css">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="fonts/elegant-font/html-css/style.css">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="vendor/slick/slick.css">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="vendor/lightbox2/css/lightbox.min.css">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="css/util.css">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+    <!--===============================================================================================-->
+    
+    <style>
+    .invoice-box {
+        max-width: 800px;
+        margin: auto;
+        padding: 30px;
+        border: 1px solid #eee;
+        box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+        font-size: 16px;
+        line-height: 24px;
+        font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+        color: #555;
+    }
+    
+    .invoice-box table {
+        width: 100%;
+        line-height: inherit;
+        text-align: left;
+    }
+    
+    .invoice-box table td {
+        padding: 5px;
+        vertical-align: top;
+    }
+    
+    .invoice-box table tr td:nth-child(2) {
+        text-align: right;
+    }
+    
+    .invoice-box table tr.top table td {
+        padding-bottom: 20px;
+    }
+    
+    .invoice-box table tr.top table td.title {
+        font-size: 45px;
+        line-height: 45px;
+        color: #333;
+    }
+    
+    .invoice-box table tr.information table td {
+        padding-bottom: 40px;
+    }
+    
+    .invoice-box table tr.heading td {
+        background: #eee;
+        border-bottom: 1px solid #ddd;
+        font-weight: bold;
+    }
+    
+    .invoice-box table tr.details td {
+        padding-bottom: 20px;
+    }
+    
+    .invoice-box table tr.item td{
+        border-bottom: 1px solid #eee;
+    }
+    
+    .invoice-box table tr.item.last td {
+        border-bottom: none;
+    }
+    
+    .invoice-box table tr.total td:nth-child(2) {
+        border-top: 2px solid #eee;
+        font-weight: bold;
+    }
+    
+    @media only screen and (max-width: 600px) {
+        .invoice-box table tr.top table td {
+            width: 100%;
+            display: block;
+            text-align: center;
+        }
+        
+        .invoice-box table tr.information table td {
+            width: 100%;
+            display: block;
+            text-align: center;
+        }
+    }
+    
+    /** RTL **/
+    .rtl {
+        direction: rtl;
+        font-family: Tahoma, 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+    }
+    
+    .rtl table {
+        text-align: left;
+    }
+    
+    .rtl table tr td:nth-child(2) {
+        text-align: right;
+    }
+
+    
+    </style>
+</head>
+
+<body onload= loadall()>
+    <div class="invoice-box">
+        <table cellpadding="0" cellspacing="0">
+            <tr class="top">
+                <td colspan="2">
+                    <table>
+                        <tr>
+                            <td class="title">
+                                
+                                 <img src="images/icons/new_logo.jpg" style="width:100%; max-width:300px;"> 
+                            </td>
+                            
+                            <td class="invoice">
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            
+            <tr class="information">
+                <td colspan="2">
+                    <table>
+                        <tr>
+                            <td>
+                                OuterVoice, Inc.<br>
+                                SMU School of Information Systems<br>
+                                Singapore 178902
+                            </td>
+                            
+                            <td class="company">
+                               
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            
+            <!--<tr class="heading">
+                <td>
+                    Payment Method
+                </td>
+                
+                <td>
+                    Check #
+                </td>
+            </tr>
+            
+            <tr class="details">
+                <td>
+                    Check
+                </td>
+                
+                <td>
+                    1000
+                </td>
+            </tr>
+            -->
+            <table>
+            
+
+
+            <tr class="heading">
+                
+                <td>
+                    Item
+                </td>
+
+                <td>
+                        <p style ="text-align: center; color: black"> Quantity </p>
+                </td>
+                
+                <td>
+                    <p style ="text-align: right; color: black">Price Per Quantity</p>
+                </td>
+            </tr>
+            
+            <tr class="item">
+                
+            </tr>
+            
+            </table>
+            
+            <table>
+            <tr>
+                
+                
+                <td class="total">
+                   
+                </td>
+            </tr>
+        </table>
+
+        <p align="center">Thank you for your purchase! We will notify you when your groupbuy order is successful!</p>
+        <br>
+    </div>
+    <br>
+    <center><a href = "index.html" color = "black">Back to Home Page</a></center>
+
+
+    <div>
+            <button class="flex-c-m size2 bg4 bo-rad-23 hov1 m-text3 trans-0-4" onClick="location.href='index.html';">
+                    Continue Shopping..
+                </button>
+
+    </div>
+
+    <!--===============================================================================================-->
+    <script type="text/javascript" src="vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+        <script type="text/javascript" src="vendor/animsition/js/animsition.min.js"></script>
+    <!--===============================================================================================-->
+        <script type="text/javascript" src="vendor/bootstrap/js/popper.js"></script>
+        <script type="text/javascript" src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+        <script type="text/javascript" src="vendor/select2/select2.min.js"></script>
+     <!--===============================================================================================-->
+     <script type="text/javascript" src="vendor/slick/slick.min.js"></script>
+     <script type="text/javascript" src="js/slick-custom.js"></script>
+     <!--===============================================================================================-->
+     <script type="text/javascript" src="vendor/countdowntime/countdowntime.js"></script>
+     <!--===============================================================================================-->
+     <script type="text/javascript" src="vendor/sweetalert/sweetalert.min.js"></script>
+     <!--===============================================================================================-->
+     <script type="text/javascript" src="vendor/jquery/jquery-3.2.1.min.js"></script>
+     <!--===============================================================================================-->
+         <script type="text/javascript" src="vendor/animsition/js/animsition.min.js"></script>
+     <!--===============================================================================================-->
+         <script type="text/javascript" src="vendor/bootstrap/js/popper.js"></script>
+         <script type="text/javascript" src="vendor/bootstrap/js/bootstrap.min.js"></script>
+     <!--===============================================================================================-->
+         <script type="text/javascript" src="vendor/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+    <script type="text/javascript" src="vendor/slick/slick.min.js"></script>
+    <script type="text/javascript" src="js/slick-custom.js"></script>
+    <!--===============================================================================================-->
+    <script type="text/javascript" src="vendor/countdowntime/countdowntime.js"></script>
+    <!--===============================================================================================-->
+    <script type="text/javascript" src="vendor/sweetalert/sweetalert.min.js"></script>
+
+
+    <!--===============================================================================================-->
+    <script src="js/main.js"></script>
+
+
+    <script>
+        
+
+    function loadall(){
+        load_invoice();
+        create_order();
+        refresh_promo();
+    }
+
+
+    function load_invoice(){
+        
+        var invoice = sessionStorage.getItem("invoice");
+        var quantity = sessionStorage.getItem("quantity");
+        if (invoice == null || 0) {
+            invoice = parseInt(1); 
+        } else {
+            invoice = parseInt(invoice);
+        }
+        invoice += parseInt(1);
+        sessionStorage.setItem("invoice",invoice);
+        var now = new Date();
+        var month = String(now.getMonth() + 1).padStart(2, '0');
+        var year = now.getFullYear();
+        var day = String(now.getDate()).padStart(2, '0');
+        var number = sessionStorage.getItem("item");
+        var cart = JSON.parse(sessionStorage.getItem(number));
+        var final_price = sessionStorage.getItem("final_price");
+        
+
+        if (month == 0){
+            month = "January"} 
+        if  (month == 1) {
+            month = "February"} 
+        if (month == 2){
+            month = "March"} 
+        if (month == 3){
+            month = "April"} 
+        if (month == 4){
+            month = "May"} 
+        if (month == 5){
+            month = "June"} 
+        if (month == 6){
+            month = "July"} 
+        if (month == 7){
+            month = "August"} 
+        if (month == 8){
+            month = "September"} 
+        if (month == 9){
+            month = "October"} 
+        if (month == 10){
+            month = "November"} 
+            if (month == 11){
+            month = "December"}
+    
+
+
+        document.querySelector(".invoice").innerHTML = 
+
+        `Invoice #: ${invoice}<br>
+        ${day} ${month}  ${year}<br>`;
+        
+        document.querySelector(".company").innerHTML = 
+        ` ${cart.company_name}<br>`;
+
+        document.querySelector(".item").innerHTML = 
+        `<td>
+                <p style ="text-align: left; color: black">${cart.product_name}</p>
+                </td>
+                
+                <td>
+                        <p style ="text-align: center; color: black">${quantity}</p>
+                <td>
+                        <p style ="text-align: right; color: black">${cart.new_price}</p>
+                </td>`;
+
+        document.querySelector(".total").innerHTML = 
+        `<p style ="text-align: right; color: black">Total: $${final_price}</p>`;   
+    }
+
+
+    function refresh_promo(){
+        var number = sessionStorage.getItem("item");
+        var cart = JSON.parse(sessionStorage.getItem(number));
+        var customer_buy = sessionStorage.getItem("quantity");
+        //console.log(customer_buy);
+        var promotion_id = cart.promotion_id;
+        //console.log(promotion_id);
+        var start_date = cart.start_datetime;
+        var end_date = cart.end_datetime;
+        data2 = {
+            "promotion_id": promotion_id,
+            "product_name": "string",
+            "company_name": "string",
+            "category": "string",
+            "start_datetime": start_date,
+            "end_datetime": end_date,
+            "max_quantity": 0,
+            "quantity_left": 0,
+            "current_buyers": 0,
+            "groupbuy_criteria": 0,
+            "offer": 0,
+            "status": "string",
+            "promo_description": "string",
+            "renew": "string",
+            "customer_buy": customer_buy,
+            "image_url": "string",
+            "old_price": "string",
+            "new_price": "string"}
+    
+
+    //console.log(data2);
+
+    $.ajax({
+                            type: "PUT",
+                            url : "https://esdg6t5-eval-test.apigee.net/put_invoice",
+                            data : JSON.stringify(data2),
+                            success: console.log("success!"),
+                            error: console.log("failure!") ,
+                            headers: {                              
+                                'Content-Type': 'application/json'  
+                            }                 
+                        });
+    }
+
+    function create_order(){
+
+        var number = sessionStorage.getItem("item");
+        var cart = JSON.parse(sessionStorage.getItem(number));
+        var promotion_id = cart.promotion_id;
+        //console.log(promotion_id);
+        var customer_name = sessionStorage.getItem("id");
+        var product_name = cart.product_name;
+        var quantity = sessionStorage.getItem("quantity");
+        var amount_paid = sessionStorage.getItem("final_price");
+        var date = new Date().toISOString().slice(0, 19);
+        var email = sessionStorage.getItem("email");
+        console.log(date);
+
+
+
+        data = {
+            "order": [
+            {
+            "order_id": 0,
+            "promotion_id": promotion_id,
+            "customer_name": customer_name,
+            "product_name": product_name,
+            "quantity": quantity,
+            "amount_paid": amount_paid,
+            "payment": 0,
+            "order_time": date,
+            "sent": "string",
+            "email": email
+            }
+                    ]
+        }
+
+        console.log(data);
+
+        $.ajax({
+                            type: "POST",
+                            url : "https://esdg6t5-eval-test.apigee.net/create_order",
+                            data : JSON.stringify(data),
+                            success: console.log("success!"),
+                            error: console.log("failure!") ,
+                            headers: {                              
+                                'Content-Type': 'application/json'  
+                            }                 
+                        });
+
+    }
+
+    </script>
+</body>
+</html>
